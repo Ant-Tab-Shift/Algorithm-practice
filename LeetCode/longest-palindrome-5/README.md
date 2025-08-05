@@ -1,4 +1,4 @@
-# LeetCode 5. Longest Palindromic Substring
+# [5. Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
 
 Given a string `s`, return *the longest* a **substring** is a contiguous **non-empty** sequence of characters within a string in `s`.
 

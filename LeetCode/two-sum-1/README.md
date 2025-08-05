@@ -1,4 +1,4 @@
-# LeetCode 1. Two Sum
+# [1. Two Sum](https://leetcode.com/problems/two-sum/)
 
 Given an array of integers `nums` and an integer `target`, return _indices of the two numbers such that they add up to `target`_.
 
