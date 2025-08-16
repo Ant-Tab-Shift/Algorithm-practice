@@ -7,11 +7,13 @@ In other words, answer whether or not if there exists a line that after reflecti
 **Note** that there can be repeated points.
 
 **Example 1:**
+
 **Input:** points = [[1,1],[-1,1]]
 **Output:** true
 **Explanation:** We can choose the line x = 0.
 
 **Example 2:**
+
 **Input:** points = [[1,1],[-1,-1]]
 **Output:** false
 **Explanation:** We can't choose a line.
