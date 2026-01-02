@@ -7,16 +7,10 @@ import (
 func numSquares(n int) int {
 	dp := make([]int, n+1)
 
-	for num := 1; num*num <= n; num++ {
-		square := num * num
-
-		for sumSquare := square; sumSquare <= n; sumSquare++ {
-			newCount := dp[sumSquare-square] + 1
-
-			if dp[sumSquare] == 0 {
-				dp[sumSquare] = newCount
-			}
-			dp[sumSquare] = min(dp[sumSquare], newCount)
+	for sum := 1; sum <= n; sum++ {
+		dp[sum] = n
+		for num := 1; num*num <= sum; num++ {
+			dp[sum] = min(dp[sum], dp[sum-num*num] + 1)
 		}
 	}
 

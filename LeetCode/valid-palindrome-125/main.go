@@ -23,12 +23,14 @@ func isPalindrome(s string) bool {
 		for rightPtr > leftPtr && !isAlphaNum(s[rightPtr]) {
 			rightPtr--
 		}
+
 		if lower(s[leftPtr]) != lower(s[rightPtr]) {
 			return false
 		}
 		leftPtr++
 		rightPtr--
 	}
+
 	return true
 }
 
