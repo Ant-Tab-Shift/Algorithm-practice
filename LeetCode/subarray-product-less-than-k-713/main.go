@@ -11,12 +11,15 @@ func numSubarrayProductLessThanK(nums []int, k int) int {
 	left, product := 0, 1
 	for right := range len(nums) {
 		product *= nums[right]
+
 		for product >= k {
 			product /= nums[left]
 			left++
 		}
+
 		count += right - left + 1
 	}
+
 	return count
 }
 

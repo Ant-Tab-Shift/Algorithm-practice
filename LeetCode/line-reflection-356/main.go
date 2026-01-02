@@ -16,6 +16,7 @@ func isReflected(points [][]int) bool {
 		minX = min(minX, point[0])
 		maxX = max(maxX, point[0])
 	}
+
 	doubledLineXCoord := minX + maxX
 	for point := range pointSet {
 		reflectedPoint := Point{doubledLineXCoord - point.x, point.y}
@@ -23,6 +24,7 @@ func isReflected(points [][]int) bool {
 			return false
 		}
 	}
+
 	return true
 }
 

@@ -10,6 +10,7 @@ func lengthOfLongestSubstring(s string) int {
 		if prevOccur, ok := lastOccurs[char]; ok {
 			left = max(left, prevOccur)
 		}
+
 		lastOccurs[char] = right
 		maxDistance = max(maxDistance, right-left)
 	}

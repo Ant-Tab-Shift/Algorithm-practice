@@ -8,8 +8,10 @@ func twoSum(nums []int, target int) []int {
 		if pairIdx, ok := numsTable[target-num]; ok {
 			return []int{pairIdx, idx}
 		}
+
 		numsTable[num] = idx
 	}
+
 	return nil
 }
 

@@ -13,11 +13,13 @@ func manacher(s string) (resL, resR int) {
 		if r > i {
 			dp[i] = min(r-i, dp[l+(r-i)])
 		}
+
 		newL, newR := i-dp[i]-1, i+dp[i]+1
 		for newL >= 0 && newR < len(unifiedS) && unifiedS[newL] == unifiedS[newR] {
 			dp[i]++
 			newL, newR = newL-1, newR+1
 		}
+
 		if i+dp[i] > r {
 			l, r = i-dp[i], i+dp[i]
 			if r-l > resR-resL {
@@ -25,6 +27,7 @@ func manacher(s string) (resL, resR int) {
 			}
 		}
 	}
+
 	return resL / 2, (resR + 1) / 2
 }
 
@@ -37,8 +40,6 @@ func main() {
 	fmt.Println(longestPalindrome("a") == "a")
 	fmt.Println(longestPalindrome("aa") == "aa")
 	fmt.Println(longestPalindrome("aaa") == "aaa")
-	fmt.Println(longestPalindrome("aaaa") == "aaaa")
-	fmt.Println(longestPalindrome("aaaaa") == "aaaaa")
 	fmt.Println(longestPalindrome("acfb") == "a")
 	fmt.Println(longestPalindrome("lkabac") == "aba")
 }

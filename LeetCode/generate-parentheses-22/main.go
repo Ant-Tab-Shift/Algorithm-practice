@@ -22,6 +22,7 @@ func (ps *ParenthesesStack) Backtrack(opened, closed int) {
 		ps.result = append(ps.result, string(ps.stack))
 		return
 	}
+	
 	if opened < cap(ps.stack)/2 {
 		ps.stack = append(ps.stack, '(')
 		ps.Backtrack(opened+1, closed)

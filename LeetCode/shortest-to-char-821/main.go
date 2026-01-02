@@ -11,9 +11,11 @@ func shortestToChar(s string, c byte) []int {
 		}
 		answer[idx] = idx - prevOccur
 	}
+	
 	for idx := len(s) - 2; idx >= 0; idx-- {
 		answer[idx] = min(answer[idx], answer[idx+1]+1)
 	}
+
 	return answer
 }
 
