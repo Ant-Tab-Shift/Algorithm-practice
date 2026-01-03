@@ -3,12 +3,13 @@ package main
 // Dynamic Programming: Top-Down with memoization
 func topDownSolution(N int) int {
 	memo := make(map[[2]int]int, N)
-	memo[[2]int{0, 0}] = 1
-	memo[[2]int{0, 1}] = 1
-	memo[[2]int{0, 2}] = 1
 
 	var helper func(int, int) int
 	helper = func(n, unitsInRow int) int {
+		if n == 0 {
+			return 1
+		}
+
 		ans, ok := memo[[2]int{n, unitsInRow}]
 		if ok {
 			return ans
