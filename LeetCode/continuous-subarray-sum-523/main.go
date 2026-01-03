@@ -6,17 +6,17 @@ func checkSubarraySum(nums []int, k int) bool {
 	memo := make(map[int]int)
 	memo[0] = -1
 
-	sum := 0
+	prefixSum := 0
 	for idx, num := range nums {
-		sum += num
+		prefixSum += num
 
-		prevIdx, ok := memo[sum%k]
-		if ok && idx-prevIdx > 1 {
+		prevIdx, ok := memo[prefixSum%k]
+		if ok && idx-prevIdx >= 2 {
 			return true
 		}
 
 		if !ok {
-			memo[sum%k] = idx
+			memo[prefixSum%k] = idx
 		}
 	}
 
